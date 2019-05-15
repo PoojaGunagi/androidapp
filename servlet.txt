@@ -1,0 +1,163 @@
+
+changing color problem
+
+.xml file
+*******************
+<servlet>
+		<servlet-name>colr</servlet-name>
+		<servlet-class>ColorDemo</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>colr</servlet-name>
+		<url-pattern>/changing</url-pattern>
+	</servlet-mapping>
+	
+******************************
+.html file
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<form method="POST" action="http://localhost:8081/pooja/changing" >
+	<label>Text-Color</label>
+	<input type="text" name="txt">
+	<div>
+		<label>Background_Color</label>
+		<input type="text" name="bck">
+
+	</div>
+	<button type="submit">Submit</button>
+	
+</form>
+</body>
+</html>
+*********************
+.java
+
+//import java.util.*;
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+public class ColorDemo extends HttpServlet{
+	public void doPost(HttpServletRequest request,HttpServletResponse response)throws IOException,ServletException
+	{
+			String c1=request.getParameter("txt");
+			String c2=request.getParameter("bck");
+			response.setContentType("text/html");
+			PrintWriter pw=response.getWriter();
+			pw.print("<html><body ");
+			pw.print("><h1>hello servlet</h1></body><style>body{background-color:"+c1);
+			pw.print(";color:"+c2);
+			pw.print(";}</style></html>");
+			pw.close();
+        }
+	}
+
+**************************************
+session
+.xml
+
+<servlet>
+		<servlet-name>std</servlet-name>
+		<servlet-class>student</servlet-class>
+
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>std</servlet-name>
+		<url-pattern>/stde</url-pattern>
+	</servlet-mapping>
+*****************************
+.java
+
+import java.io.*;
+import java.util.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class student extends HttpServlet {
+public void doGet(HttpServletRequest request,HttpServletResponse response)
+throws ServletException, IOException {
+
+HttpSession hs = request.getSession(true);
+
+response.setContentType("text/html");
+PrintWriter pw = response.getWriter();
+pw.print("<b>");
+
+Date date = (Date)hs.getAttribute("date");
+hs.setAttribute("user","pooja");
+hs.setAttribute("usn","2sd16is035");
+String us=(String)hs.getAttribute("user");
+String un=(String)hs.getAttribute("usn");
+
+
+if(date!=null){
+	pw.print("Last access : "+date+"; user "+us+";  usn "+un);
+}
+pw.println("<br>");
+date = new Date();
+hs.setAttribute("date",date);
+//hs.setAttribute("2sd",user);
+//hs.setAttribute("pooja",usn);
+pw.print("Current date:  "+date);
+pw.println("; user is: "+us+";  usn is: "+un);
+}}
+
+**********************
+in cookie program my code is not correct i will send you soon..
+ 
+
+********************
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+public class GetTwoCookie extends HttpServlet {
+
+public void doPost(HttpServletRequest request,HttpServletResponse response)throws ServletException, IOException 
+{
+// Get parameter from HTTP request.
+
+String d1 = request.getParameter("data1");
+String d2=request.getParameter("data2");
+// Create cookie.
+Cookie cookie1=new Cookie("MyCookie-1",d1);
+Cookie cookie2=new Cookie("MyCookie-2",d2);
+
+response.addCookie(cookie1);
+response.addCookie(cookie2);
+cookie1.setMaxAge(10000);
+
+cookie2.setMaxAge(10000);
+
+response.setContentType("text/html");
+PrintWriter pw = response.getWriter();
+pw.println("<B>MyCookie has been set to ");
+pw.println("cookie-> "+d1);
+pw.println(" Cookie-> "+d2);
+pw.close();
+}
+}
+*****************************************
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+public class PrintTwoCookie extends HttpServlet {
+public void doGet(HttpServletRequest request,HttpServletResponse response)
+throws ServletException, IOException {
+// Get cookies from header of HTTP request.
+Cookie[] cookies = request.getCookies();
+// Display these cookies.
+response.setContentType("text/html");
+PrintWriter pw = response.getWriter();
+pw.println("<B>");
+for(int i = 0; i <cookies.length; i++) {
+String name = cookies[i].getName();
+String value = cookies[i].getValue();
+pw.println("name = " + name +"; value = " + value);
+}
+pw.close();
+}
+}
