@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pudd"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shade3"
+    tools:context=".EveningSpclActivity">
+
+    <ImageButton
+        android:id="@+id/eve1"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginRight="13dp"
+        android:layout_marginBottom="46dp"
+        app:layout_constraintBottom_toTopOf="@+id/eve3"
+        app:layout_constraintEnd_toStartOf="@+id/eve2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/chakli"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/eve5"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/eve6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eve3"
+        app:srcCompat="@drawable/cutlet"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/eve4"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/eve6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/eve3"
+        app:layout_constraintTop_toBottomOf="@+id/eve2"
+        app:srcCompat="@drawable/jamoon"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/eve2"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="46dp"
+        app:layout_constraintBottom_toTopOf="@+id/eve4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/eve1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/pudd"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/eve3"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginRight="13dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/eve5"
+        app:layout_constraintEnd_toStartOf="@+id/eve4"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eve1"
+        app:srcCompat="@drawable/bonda"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/eve6"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/eve5"
+        app:layout_constraintTop_toBottomOf="@+id/eve4"
+        app:srcCompat="@drawable/button_idli"
+        tools:ignore="MissingConstraints" />
+
+
+</android.support.constraint.ConstraintLayout>
